@@ -1,3 +1,5 @@
+!function(){ 'use strict'
+
 const SUPPORTS_DATATRANSFER = (() => {
   try {
     new DataTransfer();
@@ -27,7 +29,7 @@ const PRIMITIVE_TYPES = ["undefined", "boolean", "number", "string", "bigint"];
 // For cyclic objects
 const map = new Map();
 
-export default function structuredClone(obj) {
+window.structuredClone = function(obj) {
   const newObj = clone(obj);
   map.clear();
   return newObj;
@@ -134,3 +136,6 @@ function isObject(obj) {
 function isPrimitive(item) {
   return item === null || PRIMITIVE_TYPES.includes(typeof item);
 }
+  
+
+}();
