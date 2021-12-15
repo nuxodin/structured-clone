@@ -1,0 +1,46 @@
+{
+    "suites": "./tests/*.js",
+    "coverage": "./index.js",
+    "browser": {
+      "loader": "esm"
+    },
+    "node": {
+      "loader": "./esm-loader.cjs"
+    },
+    "instrumenterOptions": {
+      "esModules": true
+    },
+    "configs": {
+      "chrome": {
+        "environments": [
+          {
+            "browserName": "chrome",
+            "goog:chromeOptions": {
+              "args": [
+                "headless",
+                "disable-gpu",
+                "--enable-features=SharedArrayBuffer"
+              ]
+            }
+          }
+        ]
+      },
+      "firefox": {
+        "environments": [
+          {
+            "browserName": "firefox",
+            "moz:firefoxOptions": {
+              "args": ["-headless"]
+            }
+          }
+        ]
+      },
+      "safari": {
+        "environments": [
+          {
+            "browserName": "safari"
+          }
+        ]
+      }
+    }
+  }
