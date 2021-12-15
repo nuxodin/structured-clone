@@ -1,0 +1,25 @@
+{
+    "name": "@johanholmerin/structured-clone",
+    "version": "2.4.0",
+    "author": "Johan Holmerin",
+    "license": "MIT",
+    "main": "./index.js",
+    "type": "module",
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:johanholmerin/structured-clone.git"
+    },
+    "devDependencies": {
+      "husky": "^0.14.3",
+      "intern": "^4.0.0",
+      "prettier": "1.19.1"
+    },
+    "scripts": {
+      "test": "intern",
+      "test:chrome": "intern config=@chrome",
+      "test:firefox": "intern config=@firefox",
+      "test:safari": "intern config=@safari",
+      "lint": "prettier --write {*.js,tests/**/*.js}",
+      "precommit": "npm run lint"
+    }
+  }
